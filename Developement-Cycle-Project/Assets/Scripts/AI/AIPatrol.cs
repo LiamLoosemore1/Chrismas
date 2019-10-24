@@ -107,7 +107,8 @@ public class AIPatrol : MonoBehaviour
                 Idle();
                 _navMeshAgent.speed = _aiIdleSpeed;
             }
-        } else if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right).normalized, out hit, sightDist))
+        }
+        else if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right).normalized, out hit, sightDist))
         { 
             if (hit.collider.gameObject.tag == "Player" || Vector3.Distance(player.position, transform.position) <= _aiDistanceRange)
             {
@@ -119,7 +120,8 @@ public class AIPatrol : MonoBehaviour
                 Idle();
                 _navMeshAgent.speed = _aiIdleSpeed;
             }
-        } else if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right).normalized, out hit, sightDist))
+        }
+        else if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right).normalized, out hit, sightDist))
         {
             if (hit.collider.gameObject.tag == "Player" || Vector3.Distance(player.position, transform.position) <= _aiDistanceRange)
             {
