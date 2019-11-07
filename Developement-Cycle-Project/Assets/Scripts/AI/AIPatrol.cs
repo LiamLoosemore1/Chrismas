@@ -250,11 +250,11 @@ public class AIPatrol : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(GameOverWait());
+            //Debug.LogWarning("Collision Successful!");
 
-            Debug.LogWarning("Collision Successful!");
+            StartCoroutine(GameOverWait());
         }
     }
 
