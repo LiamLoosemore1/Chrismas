@@ -254,6 +254,8 @@ public class AIPatrol : MonoBehaviour
         {
             //Debug.LogWarning("Collision Successful!");
 
+            //Debug.LogError("...");
+
             StartCoroutine(GameOverWait());
         }
     }
