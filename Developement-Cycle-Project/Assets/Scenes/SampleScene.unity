@@ -2498,7 +2498,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Timer
+  m_Text: 0:0:00
 --- !u!222 &430806719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6828,7 +6828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseXInputName: Mouse X
   mouseYInputName: Mouse Y
-  mouseSensitivity: 500
+  mouseSensitivity: 991
   playerBody: {fileID: 697549078}
 --- !u!81 &1253832025
 AudioListener:
@@ -11350,13 +11350,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa830c1b3a9dc5b4a99547c89244de09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _aiSpeed: 9.1
-  _aiIdleSpeed: 9.1
-  _aiAttackSpeed: 9.1
+  _aiSpeed: 11.91
+  _aiIdleSpeed: 11.91
+  _aiAttackSpeed: 11.91
   _aiAcceleration: 9.1
   _aiTurningSpeed: 100000000
   _aiStoppingDistance: 0.00001
-  _aiDistanceRange: 19
+  _aiDistanceRange: 29
   _patrolWaiting: 0
   _totalWaitTime: 0
   _switchProbability: 0.1

@@ -240,7 +240,7 @@ public class AIPatrol : MonoBehaviour
     {
         Time.timeScale = 0.000001f;
 
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(10);
 
         Time.timeScale = 1f;
 
