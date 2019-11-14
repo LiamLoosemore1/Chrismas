@@ -79,7 +79,6 @@ public class AIPatrol : MonoBehaviour
                 Debug.LogError("Insufficient patrol point count!");
             }
         }
-
     }
 
     // --------------------------------------------------------------------------- //
@@ -169,9 +168,7 @@ public class AIPatrol : MonoBehaviour
                     SetDestination();
                 }
             }
-
         }
-
     }
 
     private void Attack()
@@ -211,7 +208,6 @@ public class AIPatrol : MonoBehaviour
             _navMeshAgent.SetDestination(targetVector);
             _travelling = true;
         }
-
     }
 
     private void ChangePatrolPoint()
@@ -233,14 +229,13 @@ public class AIPatrol : MonoBehaviour
                 _currentPatrolIndex = _patrolPoints.Count - 1;
             }
         }
-
     }
 
     IEnumerator GameOverWait()
     {
         Time.timeScale = 0.000001f;
 
-        yield return new WaitForSecondsRealtime(10);
+        yield return new WaitForSecondsRealtime(30);
 
         Time.timeScale = 1f;
 
@@ -259,5 +254,4 @@ public class AIPatrol : MonoBehaviour
             StartCoroutine(GameOverWait());
         }
     }
-
 }

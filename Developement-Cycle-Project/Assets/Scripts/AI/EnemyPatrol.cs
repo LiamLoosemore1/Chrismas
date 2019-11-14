@@ -250,7 +250,7 @@ public class EnemyPatrol : MonoBehaviour {
         GameOver.text = ("GAME OVER");
         Time.timeScale = 0.00001f;
         //image.enabled = true;
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(10);
         //image.enabled = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
