@@ -93,6 +93,8 @@ public class AIPatrol : MonoBehaviour
         Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right).normalized * sightDist, Color.red);
         Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right).normalized * sightDist, Color.red);
 
+        //Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right + transform.right).normalized * sightDist, Color.blue);
+
 
         if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, transform.forward, out hit, sightDist))
         {
