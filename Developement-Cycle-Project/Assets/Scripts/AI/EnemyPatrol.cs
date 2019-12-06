@@ -5,7 +5,8 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class EnemyPatrol : MonoBehaviour {
+public class EnemyPatrol : MonoBehaviour
+{
 
     [SerializeField] private float speed;
     [SerializeField] private float idlespeed;
@@ -228,7 +229,7 @@ public class EnemyPatrol : MonoBehaviour {
 
     private void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag == "InteractiveLight")
+        if (col.gameObject.tag == "InteractiveLight")
         {
             col.gameObject.GetComponent<Light>().enabled = false;
         }
@@ -238,7 +239,7 @@ public class EnemyPatrol : MonoBehaviour {
     {
         if (coll.gameObject.tag == "InteractiveLight")
         {
-            coll.gameObject.GetComponent<Light>().enabled = true; 
+            coll.gameObject.GetComponent<Light>().enabled = true;
         }
     }
 
@@ -258,12 +259,14 @@ public class EnemyPatrol : MonoBehaviour {
 
     private void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
             tickSource.PlayScheduled(AudioSettings.dspTime + 0.25f);
             tickSource.Play();
-            StartCoroutine (GameOverWait ());
+            StartCoroutine(GameOverWait());
         }
     }
+
+
 
 }

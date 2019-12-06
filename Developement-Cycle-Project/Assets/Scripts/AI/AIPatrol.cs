@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AIPatrol : MonoBehaviour
 {
@@ -49,6 +50,8 @@ public class AIPatrol : MonoBehaviour
 
     public Transform player;
 
+    public Text timer;
+
     NavMeshAgent _navMeshAgent;
     int _currentPatrolIndex;
     bool _travelling;
@@ -73,7 +76,7 @@ public class AIPatrol : MonoBehaviour
             {
                 _currentPatrolIndex = 0;
                 SetDestination();
-            } 
+            }
             else
             {
                 Debug.LogError("Insufficient patrol point count!");
@@ -110,7 +113,7 @@ public class AIPatrol : MonoBehaviour
             }
         }
         else if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right).normalized, out hit, sightDist))
-        { 
+        {
             if (hit.collider.gameObject.tag == "Player" || Vector3.Distance(player.position, transform.position) <= _aiDistanceRange)
             {
                 Attack();
@@ -237,7 +240,7 @@ public class AIPatrol : MonoBehaviour
     {
         Time.timeScale = 0.000001f;
 
-        yield return new WaitForSecondsRealtime(30);
+        yield return new WaitForSecondsRealtime(10);
 
         Time.timeScale = 1f;
 
@@ -252,6 +255,8 @@ public class AIPatrol : MonoBehaviour
             //Debug.LogWarning("Collision Successful!");
 
             //Debug.LogError("...");
+
+            Debug.LogWarning("PLAYER TIME: " + timer.text);
 
             StartCoroutine(GameOverWait());
         }
