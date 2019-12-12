@@ -99,9 +99,8 @@ public class AIPatrol : MonoBehaviour
         Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right + transform.right).normalized * sightDist, Color.red);
         Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right - transform.right).normalized * sightDist, Color.red);
 
-        Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right + transform.TransformVector(10f, 0f, 10f)).normalized * sightDist, Color.blue);
-        Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right + transform.TransformVector(10f, 0f, 10f)).normalized * sightDist, Color.green);
-        //Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right - 10f).normalized * sightDist, Color.blue);
+        Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right + transform.TransformVector(0.25f, 0f, 0.25f)).normalized * sightDist, Color.red);
+        Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right + transform.TransformVector(5f, 0f, 5f)).normalized * sightDist, Color.red);
 
 
         if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, transform.forward, out hit, sightDist))
@@ -131,6 +130,58 @@ public class AIPatrol : MonoBehaviour
             }
         }
         else if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right).normalized, out hit, sightDist))
+        {
+            if (hit.collider.gameObject.tag == "Player" || Vector3.Distance(player.position, transform.position) <= _aiDistanceRange)
+            {
+                Attack();
+                _navMeshAgent.speed = _aiAttackSpeed;
+            }
+            else
+            {
+                Idle();
+                _navMeshAgent.speed = _aiIdleSpeed;
+            }
+        }
+        else if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right + transform.right).normalized, out hit, sightDist))
+        {
+            if (hit.collider.gameObject.tag == "Player" || Vector3.Distance(player.position, transform.position) <= _aiDistanceRange)
+            {
+                Attack();
+                _navMeshAgent.speed = _aiAttackSpeed;
+            }
+            else
+            {
+                Idle();
+                _navMeshAgent.speed = _aiIdleSpeed;
+            }
+        }
+        else if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right - transform.right).normalized, out hit, sightDist))
+        {
+            if (hit.collider.gameObject.tag == "Player" || Vector3.Distance(player.position, transform.position) <= _aiDistanceRange)
+            {
+                Attack();
+                _navMeshAgent.speed = _aiAttackSpeed;
+            }
+            else
+            {
+                Idle();
+                _navMeshAgent.speed = _aiIdleSpeed;
+            }
+        }
+        else if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right + transform.TransformVector(0.25f, 0f, 0.25f)).normalized, out hit, sightDist))
+        {
+            if (hit.collider.gameObject.tag == "Player" || Vector3.Distance(player.position, transform.position) <= _aiDistanceRange)
+            {
+                Attack();
+                _navMeshAgent.speed = _aiAttackSpeed;
+            }
+            else
+            {
+                Idle();
+                _navMeshAgent.speed = _aiIdleSpeed;
+            }
+        }
+        else if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right + transform.TransformVector(5f, 0f, 5f)).normalized, out hit, sightDist))
         {
             if (hit.collider.gameObject.tag == "Player" || Vector3.Distance(player.position, transform.position) <= _aiDistanceRange)
             {

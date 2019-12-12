@@ -11350,10 +11350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa830c1b3a9dc5b4a99547c89244de09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _aiSpeed: 17
-  _aiIdleSpeed: 17
-  _aiAttackSpeed: 17
-  _aiAcceleration: 9.1
+  _aiSpeed: 19
+  _aiIdleSpeed: 19
+  _aiAttackSpeed: 19
+  _aiAcceleration: 11.9
   _aiTurningSpeed: 100000000
   _aiStoppingDistance: 0.00001
   _aiDistanceRange: 29
