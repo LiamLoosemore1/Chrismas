@@ -8,10 +8,12 @@ public class RGB : MonoBehaviour
     float t = 0;
     int i = 0;
     Color[] colors = {
-        Color.white,
+
+
         Color.red,
         Color.green,
-        Color.cyan
+        Color.cyan,
+        Color.red
     };
 
     void Update()

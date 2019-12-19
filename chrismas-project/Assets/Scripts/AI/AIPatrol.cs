@@ -310,8 +310,10 @@ public class AIPatrol : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-    
-            StartCoroutine(GameOverWait());
+
+            //StartCoroutine(GameOverWait());
+
+            SceneManager.LoadScene("Credits");
         }
     }
 }
