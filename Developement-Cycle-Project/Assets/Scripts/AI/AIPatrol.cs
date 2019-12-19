@@ -66,6 +66,8 @@ public class AIPatrol : MonoBehaviour
 
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
+        //_navMeshAgent.updateUpAxis = false;
+
         if (_navMeshAgent == null)
         {
             Debug.LogError("The nav mesh agent component is not attached to " + gameObject.name);
@@ -296,7 +298,7 @@ public class AIPatrol : MonoBehaviour
     {
         Time.timeScale = 0.000001f;
 
-        yield return new WaitForSecondsRealtime(10);
+        yield return new WaitForSecondsRealtime(5);
 
         Time.timeScale = 1f;
 
