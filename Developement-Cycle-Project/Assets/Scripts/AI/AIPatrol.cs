@@ -308,12 +308,7 @@ public class AIPatrol : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            //Debug.LogWarning("Collision Successful!");
-
-            //Debug.LogError("...");
-
-            Debug.LogWarning("PLAYER TIME: " + timer.text);
-
+    
             StartCoroutine(GameOverWait());
         }
     }
